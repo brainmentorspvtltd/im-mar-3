@@ -1,0 +1,509 @@
+function songOperations(){
+
+
+}
+undefined
+function songOperations(){
+var songs = [];
+function addSong(){
+}
+function searchSong(){
+
+}
+function printSong(){
+}
+}
+undefined
+function songOperations(){
+var songs = [];
+function addSong(){
+}
+function searchSong(){
+
+}
+function printSong(){
+}
+}
+undefined
+var songs = ['Bang Bang','Boom Boom'];
+undefined
+songs.includes('Boom Boom')?'It is Already present':song.push('New Song');
+"It is Already present"
+songs;
+(2) ["Bang Bang", "Boom Boom"]
+function songOperations(){
+var songs = [];
+function addSong(songName){
+    return songs.includes(songName)?'Song is AlreadyPresent':songs.push(songName);
+}
+function searchSong(){
+
+}
+function printSong(){
+}
+}
+undefined
+songOperations()
+undefined
+function songOperations(){
+var songs = [];
+function addSong(songName){
+    return songs.includes(songName)?'Song is AlreadyPresent':songs.push(songName);
+}
+function searchSong(){
+
+}
+function printSong(){
+}
+return [addSong, searchSong, printSong];
+}
+undefined
+var arr = songOperations();
+undefined
+arr;
+(3) [ƒ, ƒ, ƒ]0: ƒ addSong(songName)1: ƒ searchSong()2: ƒ printSong()length: 3__proto__: Array(0)
+arr[0];
+ƒ addSong(songName){
+    return songs.includes(songName)?'Song is AlreadyPresent':songs.push(songName);
+}
+arr[0]('Bang Bang');
+1
+arr[0]('Boom Boom');
+2
+arr[0]('Bang Bang');
+"Song is AlreadyPresent"
+function show(){
+console.log('I am Show ');
+}
+undefined
+show();
+VM1054:2 I am Show 
+undefined
+window;
+Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+window.show();
+VM1054:2 I am Show 
+undefined
+typeof window;
+"object"
+window instanceof Window;
+true
+show();// window.show()
+VM1054:2 I am Show 
+undefined
+window == this;
+true
+this;
+Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+var show = 1000;
+undefined
+show;
+1000
+typeof show;
+"number"
+show();
+VM1407:1 Uncaught TypeError: show is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM1407:1
+window.show;
+1000
+songOperations;
+ƒ songOperations(){
+var songs = [];
+function addSong(songName){
+    return songs.includes(songName)?'Song is AlreadyPresent':songs.push(songName);
+}
+function searchSong(){
+
+}
+function printSong(){
+}
+re…
+arr;
+(3) [ƒ, ƒ, ƒ]0: ƒ addSong(songName)arguments: nullcaller: nulllength: 1name: "addSong"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM839:3[[Scopes]]: Scopes[2]0: Closure (songOperations)songs: (2) ["Bang Bang", "Boom Boom"]1: Global {window: Window, self: Window, document: document, name: "", location: Location, …}1: ƒ searchSong()arguments: nullcaller: nulllength: 0name: "searchSong"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM839:6[[Scopes]]: Scopes[2]0: Closure (songOperations) {songs: Array(2)}1: Global {window: Window, self: Window, document: document, name: "", location: Location, …}2: ƒ printSong()length: 3__proto__: Array(0)
+function songOperations(){
+var songs = [];
+function addSong(songName){
+    return songs.includes(songName)?'Song is AlreadyPresent':songs.push(songName);
+}
+function searchSong(){
+
+}
+function printSong(){
+}
+return [addSong, searchSong, printSong];
+}
+undefined
+var arr = songOperations();
+undefined
+arr[0]('xyz')
+1
+arr[0]('abc')
+2
+function songOperations(){
+var songs = [];
+function addSong(songName){
+    return songs.includes(songName)?'Song is AlreadyPresent':songs.push(songName);
+}
+function searchSong(){
+
+}
+function printSong(){
+}
+return {"add": addSong, "search":searchSong, "print":printSong};
+}
+undefined
+var obj = songOperations();
+undefined
+obj;
+{add: ƒ, search: ƒ, print: ƒ}add: ƒ addSong(songName)print: ƒ printSong()search: ƒ searchSong()__proto__: Object
+obj.add('gdfgf');
+1
+obj["add"]("hgkdfjhgjfhdkg");
+2
+function songOperations(){
+var songs = [];
+function addSong(songName){
+    return songs.includes(songName)?'Song is AlreadyPresent':songs.push(songName);
+}
+function searchSong(){
+
+}
+function printSong(){
+}
+// es6 style short hand of object
+return { addSong, searchSong, printSong};
+}
+undefined
+var obj = songOperations();
+undefined
+obj;
+{addSong: ƒ, searchSong: ƒ, printSong: ƒ}addSong: ƒ addSong(songName)printSong: ƒ printSong()searchSong: ƒ searchSong()__proto__: Object
+function songOperations(){
+var songs = [];
+var addSong = function(songName){ // Anonymous Function
+    return songs.includes(songName)?'Song is AlreadyPresent':songs.push(songName);
+}
+//function searchSong(){
+var searchSong = function(){
+}
+var printSong=function(){
+}
+// es6 style short hand of object
+return { addSong, searchSong, printSong};
+}
+undefined
+var obj = songOperations();
+undefined
+obj;
+{addSong: ƒ, searchSong: ƒ, printSong: ƒ}addSong: ƒ (songName)printSong: ƒ ()searchSong: ƒ ()__proto__: Object
+disp();
+function disp(){
+console.log("Function Defination Style ");
+}
+VM2220:3 Function Defination Style 
+undefined
+function show(){
+    console.log('X is ',x, 'Y is ',y);
+    var x = 1000;
+    console.log('X is ',x);
+    if(10>2){
+    var y = 2000;
+
+    var x = 4343;
+    console.log('X is ',x, 'Y is ',y);
+}
+var x = 9090;
+console.log('X is ',x, 'Y is ',y);
+
+}
+undefined
+show();
+VM2424:2 X is  undefined Y is  undefined
+VM2424:4 X is  1000
+VM2424:9 X is  4343 Y is  2000
+VM2424:12 X is  9090 Y is  2000
+undefined
+function show(){
+    console.log('X is ',x, 'Y is ',y);
+    var x = 1000;
+    console.log('X is ',x);
+    if(10>2){
+    var y = 2000; //fn level
+    z = 4535435; //global
+    var x = 4343;
+    console.log('X is ',x, 'Y is ',y);
+}
+var x = 9090;
+console.log('X is ',x, 'Y is ',y);
+
+}
+undefined
+show();
+VM2479:2 X is  undefined Y is  undefined
+VM2479:4 X is  1000
+VM2479:9 X is  4343 Y is  2000
+VM2479:12 X is  9090 Y is  2000
+undefined
+z;
+4535435
+x;
+VM2526:1 Uncaught ReferenceError: x is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM2526:1
+y;
+VM2537:1 Uncaught ReferenceError: y is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM2537:1
+window.z;
+4535435
+function show(){
+    console.log('X is ',x, 'Y is ',y);
+    var x = 1000;
+    console.log('X is ',x);
+    if(10>2){
+    let y = 2000; //block level
+    z = 4535435; //global
+    var x = 4343;
+    console.log('X is ',x, 'Y is ',y);
+}
+var x = 9090;
+console.log('X is ',x, 'Y is ',y);
+
+}
+undefined
+show();
+VM2598:2 Uncaught ReferenceError: y is not defined
+    at show (<anonymous>:2:36)
+    at <anonymous>:1:1
+show @ VM2598:2
+(anonymous) @ VM2623:1
+function show(){
+    console.log('X is ',x);
+    var x = 1000;
+    console.log('X is ',x);
+    if(10>2){
+    let y = 2000; //block level
+    z = 4535435; //global
+    var x = 4343;
+    console.log('X is ',x, 'Y is ',y);
+}
+var x = 9090;
+console.log('X is ',x, 'Y is ',y);
+
+}
+undefined
+show();
+VM2649:2 X is  undefined
+VM2649:4 X is  1000
+VM2649:9 X is  4343 Y is  2000
+VM2649:12 Uncaught ReferenceError: y is not defined
+    at show (<anonymous>:12:32)
+    at <anonymous>:1:1
+show @ VM2649:12
+(anonymous) @ VM2655:1
+function show(){
+    console.log('X is ',x);
+    var x = 1000;
+    console.log('X is ',x);
+    if(10>2){
+    let y = 2000; //block level
+    z = 4535435; //global
+    var x = 4343;
+    console.log('X is ',x, 'Y is ',y);
+}
+var x = 9090;
+//console.log('X is ',x, 'Y is ',y);
+
+}
+undefined
+function show(){
+    console.log('X is ',x, y);
+    let y = 9999;
+    var x = 1000;
+    console.log('X is ',x);
+    if(10>2){
+    let y = 2000; //block level
+    z = 4535435; //global
+    var x = 4343;
+    console.log('X is ',x, 'Y is ',y);
+}
+var x = 9090;
+//console.log('X is ',x, 'Y is ',y);
+
+}
+undefined
+show();
+VM2700:2 Uncaught ReferenceError: Cannot access 'y' before initialization
+    at show (<anonymous>:2:28)
+    at <anonymous>:1:1
+show @ VM2700:2
+(anonymous) @ VM2719:1
+function show(){
+   // console.log('X is ',x, y);
+    let y = 9999;
+    var x = 1000;
+    console.log('X is ',x, y);
+    if(10>2){
+    let y = 2000; //block level
+    z = 4535435; //global
+    var x = 4343;
+    console.log('X is ',x, 'Y is ',y);
+}
+var x = 9090;
+console.log('X is ',x, 'Y is ',y);
+
+}
+undefined
+show();
+VM2748:5 X is  1000 9999
+VM2748:10 X is  4343 Y is  2000
+VM2748:13 X is  9090 Y is  9999
+undefined
+function show(){
+   // console.log('X is ',x, y);
+    let y = 9999;
+    var x = 1000;
+    console.log('X is ',x, y);
+    if(10>2){
+    let y = 2000; //block level
+    z = 4535435; //global
+    var x = 4343;
+    console.log('X is ',x, 'Y is ',y);
+}
+var x = 9090;
+let y = 8888;
+console.log('X is ',x, 'Y is ',y);
+
+}
+VM2773:13 Uncaught SyntaxError: Identifier 'y' has already been declared
+function songOperations(){
+const songs = [];
+const addSong = function(songName){ // Anonymous Function
+    return songs.includes(songName)?'Song is AlreadyPresent':songs.push(songName);
+}
+//function searchSong(){
+const searchSong = function(){
+}
+const printSong=function(){
+}
+printSong = 100;
+// es6 style short hand of object
+return { addSong, searchSong, printSong};
+}
+undefined
+songOperations();
+VM2843:11 Uncaught TypeError: Assignment to constant variable.
+    at songOperations (<anonymous>:11:11)
+    at <anonymous>:1:1
+songOperations @ VM2843:11
+(anonymous) @ VM2865:1
+const arr = [];
+VM2913:1 Uncaught SyntaxError: Identifier 'arr' has already been declared
+const arr2 = [];
+undefined
+arr2.push(1000);
+1
+arr2.push(2000);
+2
+arr2;
+(2) [1000, 2000]
+arr2 = [5345,434];
+VM3026:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:6
+(anonymous) @ VM3026:1
+print();
+var print = function(){
+console.log('I am Print ');
+}
+undefined
+window.print();
+VM3158:3 I am Print 
+undefined
+printA();
+var printA = function(){
+console.log('I am PrintA ');
+}
+VM3220:1 Uncaught TypeError: printA is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM3220:1
+function songOperations(){
+const songs = [];
+const addSong = function(songName){ // Anonymous Function
+    return songs.includes(songName)?'Song is AlreadyPresent':songs.push(songName);
+}
+//function searchSong(){
+const searchSong = function(){
+}
+const printSong=function(){
+}
+printSong = 100;
+// es6 style short hand of object
+return { addSong, searchSong, printSong};
+}
+undefined
+var obj = songOperations();
+VM3241:11 Uncaught TypeError: Assignment to constant variable.
+    at songOperations (<anonymous>:11:11)
+    at <anonymous>:1:11
+songOperations @ VM3241:11
+(anonymous) @ VM3269:1
+function songOperations(){
+const songs = [];
+const addSong = function(songName){ // Anonymous Function
+    return songs.includes(songName)?'Song is AlreadyPresent':songs.push(songName);
+}
+//function searchSong(){
+const searchSong = function(){
+}
+const printSong=function(){
+}
+//printSong = 100;
+// es6 style short hand of object
+return { addSong, searchSong, printSong};
+}
+undefined
+var obj = songOperations();
+undefined
+obj;
+{addSong: ƒ, searchSong: ƒ, printSong: ƒ}addSong: ƒ (songName)arguments: nullcaller: nulllength: 1name: "addSong"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM3293:3[[Scopes]]: Scopes[3]printSong: ƒ ()arguments: nullcaller: nulllength: 0name: "printSong"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM3293:9[[Scopes]]: Scopes[3]searchSong: ƒ ()__proto__: Object
+function songOperations(){
+const songs = [];
+// NFE - Named Function Expression
+const addSong = function add(songName){ // Anonymous Function
+    return songs.includes(songName)?'Song is AlreadyPresent':songs.push(songName);
+}
+//function searchSong(){
+const searchSong = function search(){
+}
+const printSong=function print(){
+}
+//printSong = 100;
+// es6 style short hand of object
+return { addSong, searchSong, printSong};
+}
+undefined
+var obj = songOperations();
+undefined
+obj;
+{addSong: ƒ, searchSong: ƒ, printSong: ƒ}
+obj.addSong('AAA');
+1
+obj;
+{addSong: ƒ, searchSong: ƒ, printSong: ƒ}addSong: ƒ add(songName)printSong: ƒ print()searchSong: ƒ search()__proto__: Object
+function songOperations(){
+const songs = [];
+// Function Expression
+const addSong = function(songName){ // Anonymous Function
+    return songs.includes(songName)?'Song is AlreadyPresent':songs.push(songName);
+}
+//function searchSong(){
+const searchSong = function(){
+}
+const printSong=function(){
+}
+//printSong = 100;
+// es6 style short hand of object
+return { addSong, searchSong, printSong};
+}
+undefined

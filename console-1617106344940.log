@@ -1,0 +1,312 @@
+function init(){
+var count = 0;
+var countDown = function (){
+    return ++count;
+}
+return countDown;
+}
+undefined
+var fn = init();
+undefined
+fn();
+1
+fn();
+2
+fn();
+3
+fn();
+4
+fn();
+5
+function init(){
+var count = 0;
+return function (){
+    return ++count;
+}
+}
+undefined
+var fn = init();
+undefined
+fn();
+1
+fn();
+2
+fn();
+3
+fn();
+4
+fn();
+5
+var fn = init();
+undefined
+fn();
+1
+fn();
+2
+fn();
+3
+fn();
+4
+var fn = init();
+undefined
+fn();
+1
+fn();
+2
+fn();
+3
+fn();
+4
+var fn = (function (){
+var count = 0;
+return function (){
+    return ++count;
+}
+})();
+undefined
+fn();
+1
+fn();
+2
+fn();
+3
+fn();
+4
+(function(){
+    // Attach Event
+    document.getElementById('q').addEventListener('click',function(){});
+})();
+VM699:3 Uncaught TypeError: Cannot read property 'addEventListener' of null
+    at <anonymous>:3:33
+    at <anonymous>:4:3
+(anonymous) @ VM699:3
+(anonymous) @ VM699:4
+function show(){ 
+console.log(i);
+(function(){ // var i ; // Hoisting
+    for(var i = 1 ; i<=10; i++){
+    console.log("i is ",i);
+}
+})();
+  console.log(i);  
+}
+undefined
+show();
+VM896:2 Uncaught ReferenceError: i is not defined
+    at show (<anonymous>:2:13)
+    at <anonymous>:1:1
+show @ VM896:2
+(anonymous) @ VM916:1
+function show(){ 
+//console.log(i);
+(function(){ // var i ; // Hoisting
+    for(var i = 1 ; i<=10; i++){
+    console.log("i is ",i);
+}
+})();
+  console.log(i);  
+}
+undefined
+show();
+VM923:5 i is  1
+VM923:5 i is  2
+VM923:5 i is  3
+VM923:5 i is  4
+VM923:5 i is  5
+VM923:5 i is  6
+VM923:5 i is  7
+VM923:5 i is  8
+VM923:5 i is  9
+VM923:5 i is  10
+VM923:8 Uncaught ReferenceError: i is not defined
+    at show (<anonymous>:8:15)
+    at <anonymous>:1:1
+show @ VM923:8
+(anonymous) @ VM955:1
+function show(){ 
+//console.log(i);
+(function(){ // var i ; // Hoisting
+    for(var i = 1 ; i<=10; i++){
+    console.log("i is ",i);
+}
+})();
+ // console.log(i);
+}
+undefined
+show();
+VM962:5 i is  1
+VM962:5 i is  2
+VM962:5 i is  3
+VM962:5 i is  4
+VM962:5 i is  5
+VM962:5 i is  6
+VM962:5 i is  7
+VM962:5 i is  8
+VM962:5 i is  9
+VM962:5 i is  10
+undefined
+function add(x,y){
+    return x + y;
+}
+undefined
+add();
+NaN
+undefined + undefined;
+NaN
+function add(x,y){
+    console.log(x, y);
+    return x + y;
+}
+undefined
+undefined + undefined;
+NaN
+add();
+VM1140:2 undefined undefined
+NaN
+function add(x=0,y=0){
+    console.log(x, y);
+    return x + y;
+}
+undefined
+add();
+VM1182:2 0 0
+0
+add('',10)
+VM1182:2  10
+"10"
+add(NaN, 10);
+VM1182:2 NaN 10
+NaN
+add(false, 10)
+VM1182:2 false 10
+10
+function add(x=0,y=0){
+    if(x.trim().length>0){
+    x = 0;
+}
+    console.log(x, y);
+    return x + y;
+}
+undefined
+function add(x=0,y=0){
+   
+    console.log(x, y);
+    return x + y;
+}
+undefined
+var a = false;
+undefined
+a?'Truthy':'Falsy'
+"Falsy"
+a=0;
+0
+a?'Truthy':'Falsy'
+"Falsy"
+a='';
+""
+a?'Truthy':'Falsy'
+"Falsy"
+a=null;
+null
+a?'Truthy':'Falsy'
+"Falsy"
+a=undefined;
+undefined
+a?'Truthy':'Falsy'
+"Falsy"
+a='';
+""
+a?'Truthy':'Falsy'
+"Falsy"
+a=100
+100
+a?'Truthy':'Falsy'
+"Truthy"
+a='Amit';
+"Amit"
+a?'Truthy':'Falsy'
+"Truthy"
+a=true;
+true
+a?'Truthy':'Falsy'
+"Truthy"
+a={};
+{}
+a?'Truthy':'Falsy'
+"Truthy"
+function add(x=0,y=0){
+    console.log(x, y);
+    return x + y;
+}
+undefined
+function add(x,y){
+    x = x || 0;
+    y = y || 0;
+    return x + y;
+}
+undefined
+add();
+0
+add(null, null);
+0
+add(null, undefined);
+0
+add(null, 1000);
+1000
+add(undefined, 1000);
+1000
+add('',1000)
+1000
+add(10,false);
+10
+add(NaN, NaN)
+0
+add(10,NaN);
+10
+add(true, false);
+1
+true + 0
+1
+function add(x,y){
+    x = x || 0;
+    y = y || 0;
+    z =  x + y; // global
+    return z;
+}
+undefined
+add(100,200);
+300
+z;
+300
+function add(x,y){
+    'use strict'
+    x = x || 0;
+    y = y || 0;
+    z =  x + y; // global
+    return z;
+}
+undefined
+add(100,200);
+300
+function add(x,y){
+    'use strict';
+    x = x || 0;
+    y = y || 0;
+    z =  x + y; // global
+    return z;
+}
+undefined
+add(100,200);
+300
+function adder(x,y){
+    'use strict';
+    x = x || 0;
+    y = y || 0;
+    z =  x + y; // global
+    return z;
+}
+undefined
+adder();
+0
+z;
+0
