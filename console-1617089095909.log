@@ -1,0 +1,331 @@
+function add(){
+var sum = 0;
+return sum;
+}
+undefined
+typeof add;
+"function"
+add();
+0
+console.dir(add);
+VM245:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM159:1[[Scopes]]: Scopes[1]
+undefined
+function add(){
+console.log(arguments.length);
+var sum = 0;
+return sum;
+}
+undefined
+add();
+VM316:2 0
+0
+add(10,20);
+VM316:2 2
+0
+add(10,"20",[90,100]);
+VM316:2 3
+0
+function add(){
+//console.log(arguments.length);
+var sum = 0; // function level scope
+for(let i= 0 ; i<arguments.length;i++){
+sum += arguments[i];
+}
+return sum;
+}
+undefined
+add();
+0
+add(1,2,3,4);
+10
+add(1,"2",3,4);
+"1234"
+function add(){
+//console.log(arguments.length);
+var sum = 0; // function level scope
+for(let i= 0 ; i<arguments.length;i++){
+sum += parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(1,"2",3,4);
+10
+parseInt("Amit")
+NaN
+NaN + 1010
+NaN
+add(1,"two",3,4);
+NaN
+function add(){
+//console.log(arguments.length);
+var sum = 0; // function level scope
+for(let i= 0 ; i<arguments.length;i++){
+sum += isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(1,"two",3,4);
+8
+function one(){
+return 1;
+}
+undefined
+function two(){
+return "2";
+}
+undefined
+add(one, two,3,4);
+7
+function add(){
+//console.log(arguments.length);
+var sum = 0; // function level scope
+for(let i= 0 ; i<arguments.length;i++){
+if(typeof arguments[i] === "function"){
+arguments[i] = arguments[i]();
+}
+sum += isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(one, two,3,4);
+10
+function add(){
+//console.log(arguments.length);
+var sum = 0; // function level scope
+for(let i= 0 ; i<arguments.length;i++){
+if(arguments[i] instanceof Array){
+for(let j = 0; j<arguments[i].length; j++){
+    if(typeof arguments[i] === "function"){
+        arguments[i] = arguments[i]();
+    }
+    sum += isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+}
+else
+if(typeof arguments[i] === "function"){
+arguments[i] = arguments[i]();
+}
+sum += isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(one, two,3,4,[1,"2"]);
+13
+add(one, two,3,4,[one, 1,"2"]);
+10
+function add(){
+//console.log(arguments.length);
+var sum = 0; // function level scope
+for(let i= 0 ; i<arguments.length;i++){
+if(arguments[i] instanceof Array){
+for(let j = 0; j<arguments[i].length; j++){
+    if(typeof arguments[i][j] === "function"){
+        arguments[i][j] = arguments[i][j]();
+    }
+    sum += isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]);
+}
+}
+else
+if(typeof arguments[i] === "function"){
+arguments[i] = arguments[i]();
+}
+sum += isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(one, two,3,4,[one, 1,"2"]);
+15
+function add(){
+//console.log(arguments.length);
+var sum = 0; // function level scope
+for(let i= 0 ; i<arguments.length;i++){
+if(arguments[i] instanceof Array){
+for(let j = 0; j<arguments[i].length; j++){
+    if(typeof arguments[i][j] === "function"){
+        arguments[i][j] = arguments[i][j]();
+    }
+    sum += isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]);
+console.log('Array ',sum);
+}
+}
+else
+if(typeof arguments[i] === "function"){
+arguments[i] = arguments[i]();
+}
+sum += isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+console.log('Sum ',sum);
+return sum;
+}
+undefined
+add(one, two,3,4,[one, 1,"2"]);
+VM1450:11 Array  11
+VM1450:11 Array  12
+VM1450:11 Array  14
+VM1450:20 Sum  15
+15
+function add(){
+//console.log(arguments.length);
+var sum = 0; // function level scope
+for(let i= 0 ; i<arguments.length;i++){
+if(arguments[i] instanceof Array){
+for(let j = 0; j<arguments[i].length; j++){
+    if(typeof arguments[i][j] === "function"){
+        arguments[i][j] = arguments[i][j]();
+    }
+    sum += isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]);
+//console.log('Array ',sum);
+} // jth loop
+} // if array
+else{
+if(typeof arguments[i] === "function"){
+arguments[i] = arguments[i]();
+}
+sum += isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+} // else
+} // ith loop
+//console.log('Sum ',sum);
+return sum;
+}
+undefined
+add(one, two,3,4,[one, 1,"2"]);
+14
+function add(){
+//console.log(arguments.length);
+var sum = 0; // function level scope
+for(let i= 0 ; i<arguments.length;i++){
+if(arguments[i] instanceof Array){
+for(let j = 0; j<arguments[i].length; j++){
+    if(typeof arguments[i][j] === "function"){
+        arguments[i][j] = arguments[i][j]();
+    }
+    sum += isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]);
+//console.log('Array ',sum);
+} // jth loop
+} // if array
+else{
+if(typeof arguments[i] === "function"){
+arguments[i] = arguments[i]();
+}
+sum += isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+} // else
+} // ith loop
+//console.log('Sum ',sum);
+return sum;
+}
+undefined
+function jQuery(){
+console.log("JQuery Function ");
+}
+undefined
+typeof jQuery;
+"function"
+jQuery();
+VM1631:2 JQuery Function 
+undefined
+jQuery([10,20]);
+VM1631:2 JQuery Function 
+undefined
+jQuery("#id");
+VM1631:2 JQuery Function 
+undefined
+jQuery(".class");
+VM1631:2 JQuery Function 
+undefined
+jQuery(window);
+VM1631:2 JQuery Function 
+undefined
+var $ = jQuery;
+undefined
+typeof $;
+"function"
+$;
+ƒ jQuery(){
+console.log("JQuery Function ");
+}
+$("#id");
+VM1631:2 JQuery Function 
+undefined
+function show(...args){
+console.log(args);
+
+}
+undefined
+show(10,20);
+VM2044:2 (2) [10, 20]
+undefined
+function show(...args){
+console.log(args);
+console.dir(arguments);
+
+}
+undefined
+show(10,20);
+VM2126:2 (2) [10, 20]
+VM2126:3 Arguments(2)0: 101: 20callee: (...)length: 2Symbol(Symbol.iterator): ƒ values()get callee: ƒ ()set callee: ƒ ()__proto__: Object
+undefined
+function show(...args){
+console.log(typeof args, args instanceof Array) ;
+console.dir(typeof arguments, arguments instanceof Array);
+
+}
+undefined
+show(10,20);
+VM2340:2 object true
+VM2340:3 object
+undefined
+function show(...args){
+console.log(typeof args, args instanceof Array) ;
+for(let i = 0; i<args.length; i++){
+console.log(args[i]);
+}
+//console.dir(typeof arguments, arguments instanceof Array);
+
+}
+undefined
+show(10,20);
+VM2427:2 object true
+VM2427:4 10
+VM2427:4 20
+undefined
+function disp(x,y,...a){
+console.log(x,y,a);
+}
+disp(10,20, 90,1000,10002,244);
+VM2615:2 10 20 (4) [90, 1000, 10002, 244]
+undefined
+function disp(...a,...b){
+console.log(a,b);
+}
+disp(10,20, 90,1000,10002,244);
+VM2676:1 Uncaught SyntaxError: Rest parameter must be last formal parameter
+function disp(...a,b,c){
+console.log(a,b);
+}
+disp(10,20, 90,1000,10002,244);
+VM2692:1 Uncaught SyntaxError: Rest parameter must be last formal parameter
+var arr = [10,20];
+undefined
+var arr2 = [90,100];
+undefined
+var arr3 = [...arr,...arr2];
+undefined
+arr3;
+(4) [10, 20, 90, 100]
+var arr3 = [arr,arr2];
+undefined
+arr3;
+(2) [Array(2), Array(2)]
+var obj = {id:101, name:'Ram'};
+undefined
+var obj2 = {id:1000, age:21};
+undefined
+var obj3 = {...obj, ...obj2};
+undefined
+obj3;
+{id: 1000, name: "Ram", age: 21}
