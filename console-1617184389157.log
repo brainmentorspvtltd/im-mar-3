@@ -1,0 +1,63 @@
+function Person(age, address){
+    this.age = age;
+    this.address = address;
+}
+Person.prototype.print = function(){
+console.log(`Age ${this.age} Address ${this.address}`);
+}
+ƒ (){
+console.log(`Age ${this.age} Address ${this.address}`);
+}
+function Employee(id, name, salary, age, address){
+// this = {}
+Person.call(this,age, address); // this{} , 21, 'Delhi'
+this.id = id;
+this.name = name;
+this.salary = salary;
+}
+Employee.prototype.hra = function(){
+    return this.salary * 0.30;
+}
+Employee.prototype.da = function(){
+    return this.salary * 0.10;
+}
+Employee.prototype.ta = function(){
+    return this.salary * 0.20;
+}
+Employee.prototype.grossSalary = function(){
+    return this.salary + this.hra() + this.da () + this.ta ();
+}
+Employee.prototype.printDetails = function(){
+    this.print();
+    console.log(`Id ${this.id} Name ${this.name} Salary ${this.salary}
+    HRA ${this.hra()} 
+    DA ${this.da()}
+    TA ${this.ta()}
+    GS ${this.grossSalary()}`);
+}
+Employee.prototype.__proto__ = Person.prototype;
+var ram = new Employee(1001, 'Ram', 90000, 21, 'Delhi');
+ram.printDetails();
+VM48:6 Age 21 Address Delhi
+VM324:22 Id 1001 Name Ram Salary 90000
+    HRA 27000 
+    DA 9000
+    TA 18000
+    GS 144000
+undefined
+ram;
+Employee {age: 21, address: "Delhi", id: 1001, name: "Ram", salary: 90000}address: "Delhi"age: 21id: 1001name: "Ram"salary: 90000__proto__: Personda: ƒ ()grossSalary: ƒ ()hra: ƒ ()printDetails: ƒ ()ta: ƒ ()constructor: ƒ Employee(id, name, salary, age, address)__proto__: print: ƒ ()constructor: ƒ Person(age, address)__proto__: Object
+typeof Employee;
+"function"
+Employee.myStatic = function(){
+console.log(" i am Static ");
+}
+ƒ (){
+console.log(" i am Static ");
+}
+Employee.myStatic();
+VM496:2  i am Static 
+undefined
+console.dir(Employee);
+VM634:1 ƒ Employee(id, name, salary, age, address)myStatic: ƒ ()arguments: nullcaller: nulllength: 5name: "Employee"prototype: Person {hra: ƒ, da: ƒ, ta: ƒ, grossSalary: ƒ, printDetails: ƒ, …}__proto__: ƒ ()[[FunctionLocation]]: VM324:1[[Scopes]]: Scopes[1]
+undefined

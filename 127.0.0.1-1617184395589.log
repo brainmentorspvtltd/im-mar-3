@@ -1,0 +1,40 @@
+window.document.getElementsByTagName('input');
+HTMLCollection(5) [input, input, input, input, input]
+var e = window.document.getElementsByTagName('input');
+undefined
+typeof e;
+"object"
+e instanceof Array;
+false
+e[0].value;
+"gdfgfdgg"
+e[0].value = '';
+""
+e[1].value = '';
+""
+e[2].value = '';
+""
+e.forEach
+undefined
+var arr = [10,20,30];
+undefined
+arr.forEach
+ƒ forEach() { [native code] }
+Array.prototype.forEach.call(e,(element)=>console.log(element));
+VM690:1 <input type=​"text">​
+VM690:1 <input type=​"text">​
+VM690:1 <input type=​"text">​
+VM690:1 <input type=​"text">​
+VM690:1 <input type=​"text">​
+undefined
+var a = [(element)=>console.log(element)]
+Array.prototype.forEach.apply(e,a);
+VM822:1 <input type=​"text">​
+VM822:1 <input type=​"text">​
+VM822:1 <input type=​"text">​
+VM822:1 <input type=​"text">​
+VM822:1 <input type=​"text">​
+undefined
+var a = [(element)=>element.value='']
+Array.prototype.forEach.apply(e,a);
+undefined

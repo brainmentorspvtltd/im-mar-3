@@ -1,0 +1,208 @@
+function Person(age, address){
+    this.age = age;
+    this.address = address;
+}
+Person.prototype.print = function(){
+console.log(`Age ${this.age} Address ${this.address}`);
+}
+ƒ (){
+console.log(`Age ${this.age} Address ${this.address}`);
+}
+function Employee(id, name, salary){
+this.id = id;
+this.name = name;
+this.salary = salary;
+}
+Employee.prototype.hra = function(){
+    return this.salary * 0.30;
+}
+Employee.prototype.da = function(){
+    return this.salary * 0.10;
+}
+Employee.prototype.ta = function(){
+    return this.salary * 0.20;
+}
+Employee.prototype.grossSalary = function(){
+    return this.salary + this.hra() + this.da () + this.ta ();
+}
+Employee.prototype.printDetails = function(){
+    this.print();
+    console.log(`Id ${this.id} Name ${this.name} Salary ${this.salary}
+    HRA ${this.hra()} 
+    DA ${this.da()}
+    TA ${this.ta()}
+    GS ${this.grossSalary()}`);
+}
+Employee.prototype.__proto__ = Person.prototype;
+{print: ƒ, constructor: ƒ}
+typeof Employee;
+"function"
+Employee.prototype
+Person {hra: ƒ, da: ƒ, ta: ƒ, grossSalary: ƒ, printDetails: ƒ, …}
+Employee.prototype.__proto__ == Person.prototype
+true
+Employee.prototype.__proto__ == Object.prototype
+false
+Employee.prototype.__proto__.__proto==Object.prototype;
+false
+Employee.prototype.__proto__.__proto__==Object.prototype;
+true
+Person.prototype.__proto__== Object.prototype
+true
+var ram = new Employee(1010, 'Ram',9000);
+undefined
+ram;
+Employee {id: 1010, name: "Ram", salary: 9000}id: 1010name: "Ram"salary: 9000__proto__: Personda: ƒ ()grossSalary: ƒ ()hra: ƒ ()printDetails: ƒ ()ta: ƒ ()constructor: ƒ Employee(id, name, salary)__proto__: print: ƒ ()constructor: ƒ Person(age, address)__proto__: constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+ram.printDetails();
+VM302:6 Age undefined Address undefined
+VM1024:20 Id 1010 Name Ram Salary 9000
+    HRA 2700 
+    DA 900
+    TA 1800
+    GS 14400
+undefined
+function whoAmI(){
+    console.log('My Name is ',this.myName);
+}
+undefined
+window.whoAmI();
+VM1736:2 My Name is  undefined
+undefined
+function whoAmI(){
+    console.log('My Name is ',this.myName, this);
+}
+undefined
+window.whoAmI();
+VM1802:2 My Name is  undefined Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+var myName = 'Amit';
+undefined
+window.myName;
+"Amit"
+window == this;
+true
+whoAmI(); // window.whoAmI();  // this
+VM1802:2 My Name is  Amit Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+window.whoAmI();
+VM1802:2 My Name is  Amit Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+var obj = {myName:'Ram'};
+undefined
+var obj = new whoAmI();
+VM1802:2 My Name is  undefined whoAmI {}__proto__: Object
+undefined
+whoAmI.call(obj);
+VM1802:2 My Name is  undefined whoAmI {}
+undefined
+var obj = {myName:'Ram'};
+undefined
+obj;
+{myName: "Ram"}
+whoAmI.call(obj);
+VM1802:2 My Name is  Ram {myName: "Ram"}
+undefined
+window.whoAmI.call(obj);
+VM1802:2 My Name is  Ram {myName: "Ram"}
+undefined
+window.whoAmI.apply(obj);
+VM1802:2 My Name is  Ram {myName: "Ram"}
+undefined
+function whoAmI(age, city){
+    console.log('My Name is ',this.myName, this, age, city);
+}
+undefined
+whoAmI(21, 'Delhi');
+VM2439:2 My Name is  Amit Window {window: Window, self: Window, document: document, name: "", location: Location, …} 21 Delhi
+undefined
+whoAmI.call(obj, 22, 'Delhi');
+VM2439:2 My Name is  Ram {myName: "Ram"} 22 Delhi
+undefined
+whoAmI(21,'fgsdgfdf');
+VM2439:2 My Name is  Amit Window {window: Window, self: Window, document: document, name: "", location: Location, …} 21 fgsdgfdf
+undefined
+whoAmI.call(obj, {x:10010}, {y:9999});
+VM2439:2 My Name is  Ram {myName: "Ram"} {x: 10010} {y: 9999}y: 9999__proto__: Object
+undefined
+var obj = {
+    x:{
+
+}, y:{
+
+
+}
+}
+undefined
+var obj = {myName:'Ram'};
+undefined
+whoAmI.call(obj, 21, 'Delhi');
+VM2439:2 My Name is  Ram {myName: "Ram"} 21 Delhi
+undefined
+var arr= [21, 'Delhi'];
+whoAmI.apply(obj, arr);
+VM2439:2 My Name is  Ram {myName: "Ram"} 21 Delhi
+undefined
+whoAmI
+ƒ whoAmI(age, city){
+    console.log('My Name is ',this.myName, this, age, city);
+}
+whoAmI.call(obj,[21, 'Mumbai'])
+VM2439:2 My Name is  Ram {myName: "Ram"} (2) [21, "Mumbai"] undefined
+undefined
+var arr = [10,20,30,40,50];
+undefined
+var [x,y] = arr;
+undefined
+x;
+10
+y;
+20
+var z = arr[0];
+undefined
+var [x,,,y] = arr;
+undefined
+x;
+10
+y;
+40
+var [x,y] = [100,200];
+undefined
+x;
+100
+y;
+200
+[x,y] = [y,x];
+(2) [200, 100]
+x;
+200
+y;
+100
+var obj3 = {id:1001 , name:'Ram', salary:9999};
+undefined
+var {id, name} = obj3;
+undefined
+id;
+1001
+name;
+"Ram"
+var t = obj3.id;
+undefined
+t;
+1001
+whoAmI(21,'gdfgdf')
+VM2439:2 My Name is  Amit Window {window: Window, self: Window, document: document, name: "Ram", location: Location, …} 21 gdfgdf
+undefined
+var fn = whoAmI.bind(obj)
+undefined
+fn(22, 'Mumbai');
+VM2439:2 My Name is  Ram {myName: "Ram"} 22 Mumbai
+undefined
+fn(22, 'Mumbai');
+VM2439:2 My Name is  Ram {myName: "Ram"} 22 Mumbai
+undefined
+fn(22, 'Mumbai');
+VM2439:2 My Name is  Ram {myName: "Ram"} 22 Mumbai
+undefined
+whoAmI(22, 'Delhi');
+VM2439:2 My Name is  Amit Window {window: Window, self: Window, document: document, name: "Ram", location: Location, …} 22 Delhi
+undefined

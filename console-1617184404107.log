@@ -1,0 +1,130 @@
+class Person{
+    constructor(age, address){
+        this.age = age;
+        this.address = address;
+}
+print(){
+    console.log(`Age ${this.age} Address ${this.address}`);
+}
+}
+class Employee extends Person{
+    constructor(id, name, salary, age, address){
+        super(age, address);
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+        
+}
+    printDetails(){
+        super.print();
+        console.log(`Id ${this.id} Name ${this.name} address ${this.address}`);
+        console.log(`HRA ${this.hra()} 
+                     DA ${this.da()}
+                     TA ${this.ta()}
+                     GS ${this.gs()}`);          
+}
+    hra(){
+    return this.salary * 0.30;
+}
+da(){
+    return this.salary * 0.10;
+}
+ta(){
+    return this.salary * 0.20;
+}
+gs(){
+    return this.salary + this.hra() + this.da() + this.ta() ;
+}
+}
+
+undefined
+typeof Employee;
+"function"
+typeof Person;
+"function"
+var ram = new Employee(1001, 'Ram', 9999, 21, 'Delhi');
+undefined
+ram.printDetails();
+VM966:7 Age 21 Address Delhi
+VM966:20 Id 1001 Name Ram address Delhi
+VM966:21 HRA 2999.7 
+                     DA 999.9000000000001
+                     TA 1999.8000000000002
+                     GS 15998.400000000001
+undefined
+Employee.prototype
+Person {constructor: ƒ, printDetails: ƒ, hra: ƒ, da: ƒ, ta: ƒ, …}constructor: class Employeeda: ƒ da()gs: ƒ gs()hra: ƒ hra()printDetails: ƒ printDetails()ta: ƒ ta()__proto__: Object
+ram.__proto__ == Employee.prototype
+true
+Employee.prototype.__proto__ == Person.prototype;
+true
+Person.prototype.__proto__ == Object.prototype;
+true
+class C{}
+class A{
+
+}
+class B extends A,C{
+
+}
+VM1645:5 Uncaught SyntaxError: Unexpected token ','
+Person.prototype
+{constructor: ƒ, print: ƒ}
+var e = {
+x:{},
+y:{},
+z:{}
+}
+undefined
+function A1(){
+
+}
+undefined
+A1.prototype;
+{constructor: ƒ}
+A1.prototype.x = 100;
+100
+function B1(){
+
+}
+undefined
+B1.prototype.y = 2000;
+2000
+function C(){}
+undefined
+C.prototype
+{constructor: ƒ}
+var q = {
+a1:A1.prototype,
+b1:B1.prototype
+}
+undefined
+q;
+{a1: {…}, b1: {…}}a1: {x: 100, constructor: ƒ}b1: {y: 2000, constructor: ƒ}__proto__: Object
+C.prototype.__proto__== q;
+false
+C.prototype.__proto__= q;
+{a1: {…}, b1: {…}}
+var c1 = new C();
+undefined
+c1;
+C {}__proto__: constructor: ƒ C()__proto__: a1: {x: 100, constructor: ƒ}b1: {y: 2000, constructor: ƒ}__proto__: Object
+c1.a1.x;
+100
+c1.b1.y;
+2000
+class Q1 {
+static show(){
+console.log("I am Show ");
+}
+}
+undefined
+Q1.show();
+VM2443:3 I am Show 
+undefined
+class Q2{
+#show(){
+console.log("I am Private Function");
+}
+}
+undefined
