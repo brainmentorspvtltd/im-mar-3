@@ -1,0 +1,226 @@
+var obj = {id:1001};
+undefined
+obj;
+{id: 1001}
+obj.id = 1002;
+1002
+obj;
+{id: 1002}
+obj.name = 'Ram';
+"Ram"
+obj;
+{id: 1002, name: "Ram"}
+obj.address = 'Delhi';
+"Delhi"
+obj;
+{id: 1002, name: "Ram", address: "Delhi"}address: "Delhi"id: 1002name: "Ram"__proto__: Object
+delete obj.address;
+true
+obj;
+{id: 1002, name: "Ram"}
+obj.age = 21;
+21
+obj;
+{id: 1002, name: "Ram", age: 21}
+for(let key in obj){
+    console.log(key);
+}
+VM430:2 id
+VM430:2 name
+VM430:2 age
+undefined
+for(let key in obj){
+    console.log(key, obj.key);
+}
+VM465:2 id undefined
+VM465:2 name undefined
+VM465:2 age undefined
+undefined
+for(let key in obj){
+    console.log(key, obj[key]);
+}
+VM487:2 id 1002
+VM487:2 name Ram
+VM487:2 age 21
+undefined
+obj;
+{id: 1002, name: "Ram", age: 21}
+obj.1=true;
+VM536:1 Uncaught SyntaxError: Unexpected number
+var obj2 = {1:true, 2: false, 3 : true};
+undefined
+obj2;
+{1: true, 2: false, 3: true}
+obj.1;
+VM636:1 Uncaught SyntaxError: Unexpected number
+obj[1];
+undefined
+obj2.1;
+VM688:1 Uncaught SyntaxError: Unexpected number
+obj2[1]
+true
+obj2[2];
+false
+var obj2 = {1:true, 2: false, 3 : true , 'a b':'ghdfjkghfdjkg'};
+undefined
+obj2.a b;
+VM821:1 Uncaught SyntaxError: Unexpected identifier
+obj2['a b'];
+"ghdfjkghfdjkg"
+var arr = [10,20,30,40,50];
+undefined
+for(let a of arr){
+    console.log(a);
+}
+VM970:2 10
+VM970:2 20
+VM970:2 30
+VM970:2 40
+VM970:2 50
+undefined
+arr.entries
+ƒ entries() { [native code] }
+arr.entries()
+Array Iterator {}
+arr.values()
+Array Iterator {}
+var itr = arr.values();
+undefined
+itr;
+Array Iterator {}__proto__: Array Iteratornext: ƒ next()arguments: (...)caller: (...)length: 0name: "next"__proto__: ƒ ()[[Scopes]]: Scopes[0]Symbol(Symbol.toStringTag): "Array Iterator"__proto__: Object
+itr.next()
+{value: 10, done: false}
+itr.next().value;
+20
+itr.next().value;
+30
+itr.next().value;
+40
+itr.next().value;
+50
+itr.next().value;
+undefined
+itr.next();
+{value: undefined, done: true}
+function *autoIncrement(){
+
+}
+undefined
+function *autoIncrement(){
+    var counter = 1;
+    yield counter;
+    counter+1;
+    yield counter;
+    counter+1;
+    yield counter;
+    counter+1;
+    yield counter;
+    
+}
+undefined
+var itr = autoIncrement();
+undefined
+itr;
+autoIncrement {<suspended>}
+itr.next();
+{value: 1, done: false}
+autoIncrement;
+ƒ *autoIncrement(){
+    var counter = 1;
+    yield counter;
+    counter+1;
+    yield counter;
+    counter+1;
+    yield counter;
+    counter+1;
+    yield counter;
+    
+}
+itr;
+autoIncrement {<suspended>}
+itr.next();
+{value: 1, done: false}
+function *autoIncrement(){
+    var counter = 1;
+    yield counter;
+    ++counter;
+    yield counter;
+    ++counter;
+    yield counter;
+    ++counter;
+    yield counter;
+    
+}
+undefined
+var itr = autoIncrement();
+undefined
+itr.next();
+{value: 1, done: false}
+itr.next();
+{value: 2, done: false}
+itr.next();
+{value: 3, done: false}
+itr.next();
+{value: 4, done: false}
+itr.next();
+{value: undefined, done: true}
+function *autoIncrement(){
+    var counter = 1;
+    while(true){
+    yield counter;
+    ++counter;
+}
+    
+}
+undefined
+var itr = autoIncrement();
+undefined
+itr.next().value;
+1
+itr.next().value;
+2
+itr.next().value;
+3
+itr.next().value;
+4
+itr.next().value;
+5
+itr.next().value;
+6
+itr.next().value;
+7
+itr.next().value;
+8
+itr.next().value;
+9
+itr.next().value;
+10
+itr.next().value;
+11
+itr.next().value;
+12
+itr.next().value;
+13
+obj;
+{id: 1002, name: "Ram", age: 21}
+console.dir(obj);
+VM2010:1 Objectage: 21id: 1002name: "Ram"__proto__: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+undefined
+Array;
+ƒ Array() { [native code] }
+typeof Array;
+"function"
+Array.prototype
+[constructor: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, find: ƒ, …]concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {copyWithin: true, entries: true, fill: true, find: true, findIndex: true, …}__proto__: Object
+var arr= [10,20];
+undefined
+var arr = new Array(10);
+undefined
+arr;
+(10) [empty × 10]
+var arr = new Array(10,20,30,40);
+undefined
+arr;
+(4) [10, 20, 30, 40]
+Object.prototype;
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}

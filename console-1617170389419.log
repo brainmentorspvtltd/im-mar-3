@@ -1,0 +1,105 @@
+var arr = [10,20,30,40,50];
+undefined
+var products = [
+    {name:'Iphone 11', price:50000, brand:'Apple'},
+{name:'Iphone 12', price:70000, brand:'Apple'}, 
+{name:'Galaxy S10', price:60000, brand:'Samsung'}
+
+];
+undefined
+var sum = 0;
+for(let i = 0 ; i<products.length; i++){
+    sum+= product[i].price;
+}
+console.log('Sum is '
+VM857:5 Uncaught SyntaxError: missing ) after argument list
+var sum = 0;
+for(let i = 0 ; i<products.length; i++){
+    sum+= product[i].price;
+}
+console.log('Sum is ', sum);
+VM890:3 Uncaught ReferenceError: product is not defined
+    at <anonymous>:3:11
+(anonymous) @ VM890:3
+var sum = 0;
+for(let i = 0 ; i<products.length; i++){
+    sum+= products[i].price;
+}
+console.log('Sum is ', sum);
+VM896:5 Sum is  180000
+undefined
+products.reduce((acc, currentElement)=>acc+currentElement, acc=0);
+"0[object Object][object Object][object Object]"
+products.reduce((acc, currentElement)=>acc+currentElement.price, acc=0);
+180000
+typeof products;
+"object"
+products instanceof Array;
+true
+products[0];
+{name: "Iphone 11", price: 50000, brand: "Apple"}
+typeof products[0];
+"object"
+ products[0] instanceof Object;
+true
+typeof Object;
+"function"
+Object.prototype.toString
+ƒ toString() { [native code] }
+var obj = {id:10101, name:'Ram'};
+undefined
+typeof obj;
+"object"
+obj instanceof Object;
+true
+obj.toString();
+"[object Object]"
+console.log('Your Object is ' + obj); // obj.toString()
+VM1653:1 Your Object is [object Object]
+undefined
+console.log('Your Object is ',obj);
+VM1745:1 Your Object is  {id: 10101, name: "Ram"}
+undefined
+products;
+(3) [{…}, {…}, {…}]0: {name: "Iphone 11", price: 50000, brand: "Apple"}1: {name: "Iphone 12", price: 70000, brand: "Apple"}2: {name: "Galaxy S10", price: 60000, brand: "Samsung"}length: 3__proto__: Array(0)
+products.reduce((acc, product)=>{
+if(product.brand==='Apple'){
+    acc.push(product);
+}
+return acc;
+}, acc = []);
+(2) [{…}, {…}]0: {name: "Iphone 11", price: 50000, brand: "Apple"}1: {name: "Iphone 12", price: 70000, brand: "Apple"}length: 2__proto__: Array(0)
+products;
+(3) [{…}, {…}, {…}]0: {name: "Iphone 11", price: 50000, brand: "Apple"}1: {name: "Iphone 12", price: 70000, brand: "Apple"}2: {name: "Galaxy S10", price: 60000, brand: "Samsung"}length: 3__proto__: Array(0)
+products.sort((first , second)=>first.price - second.price);
+(3) [{…}, {…}, {…}]0: {name: "Iphone 11", price: 50000, brand: "Apple"}1: {name: "Galaxy S10", price: 60000, brand: "Samsung"}2: {name: "Iphone 12", price: 70000, brand: "Apple"}length: 3__proto__: Array(0)
+products.sort((first , second)=>second.price - first.price);
+(3) [{…}, {…}, {…}]0: {name: "Iphone 12", price: 70000, brand: "Apple"}1: {name: "Galaxy S10", price: 60000, brand: "Samsung"}2: {name: "Iphone 11", price: 50000, brand: "Apple"}length: 3__proto__: Array(0)
+"amit".localeCompare("ram")
+-1
+"ram".localeCompare("amit")
+1
+"ram".localeCompare("ram")
+0
+products.sort((first , second)=>first.brand.localeCompare(second.brand));
+(3) [{…}, {…}, {…}]0: {name: "Iphone 12", price: 70000, brand: "Apple"}1: {name: "Iphone 11", price: 50000, brand: "Apple"}2: {name: "Galaxy S10", price: 60000, brand: "Samsung"}length: 3__proto__: Array(0)
+var clone = [...products]
+undefined
+clone;
+(3) [{…}, {…}, {…}]0: {name: "Iphone 12", price: 70000, brand: "Apple"}1: {name: "Iphone 11", price: 50000, brand: "Apple"}2: {name: "Galaxy S10", price: 60000, brand: "Samsung"}length: 3__proto__: Array(0)
+clone == products;
+false
+var clone2 = products.filter(product=>true);
+undefined
+clone2;
+(3) [{…}, {…}, {…}]0: {name: "Iphone 12", price: 70000, brand: "Apple"}1: {name: "Iphone 11", price: 50000, brand: "Apple"}2: {name: "Galaxy S10", price: 60000, brand: "Samsung"}length: 3__proto__: Array(0)
+var clone3 = products.map(product=>product);
+undefined
+clone3;
+(3) [{…}, {…}, {…}]0: {name: "Iphone 12", price: 70000, brand: "Apple"}1: {name: "Iphone 11", price: 50000, brand: "Apple"}2: {name: "Galaxy S10", price: 60000, brand: "Samsung"}length: 3__proto__: Array(0)
+products.some(product=>product.price>60000);
+true
+products.every(product=>product.price>60000);
+false
+products.every(product=>product.price>6000);
+true
