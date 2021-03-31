@@ -1,0 +1,291 @@
+console.log(" Start ");
+setTimeout(()=>{
+console.log("I Will Run After 5 sec ");
+},5000);
+console.log("End ");
+VM203:1  Start 
+VM203:5 End 
+undefined
+VM203:3 I Will Run After 5 sec 
+console.log(" Start ");
+var r = doWork();
+console.log("End ", r);
+
+function doWork(){
+setTimeout(()=>{
+console.log("I Will Run After 5 sec ");
+return "I am Back ";
+},5000);
+//return undefined;
+}
+VM329:1  Start 
+VM329:3 End  undefined
+undefined
+VM329:7 I Will Run After 5 sec 
+function giveMeResult(data){
+    console.log(data);
+}
+console.log(" Start ");
+doWork(giveMeResult);
+console.log("End ", r);
+
+function doWork(callbackFn){
+setTimeout(()=>{
+console.log("I Will Run After 5 sec ");
+//return "I am Back ";
+callbackFn("I am Back ");
+},5000);
+//return undefined;
+}
+VM471:4  Start 
+VM471:6 End  undefined
+undefined
+VM471:10 I Will Run After 5 sec 
+VM471:2 I am Back 
+function giveMeResult(data){
+    console.log(data);
+    setTimeout(()=>{
+        const callback = (dt)=>{
+            console.log(dt);
+            setTimeout(()=>{
+    console.log('I am Back3');
+
+},7000);
+}
+callback('I am Back2');
+},5000);
+}
+console.log(" Start ");
+doWork(giveMeResult);
+console.log("End ", r);
+
+function doWork(callbackFn){
+setTimeout(()=>{
+console.log("I Will Run After 5 sec ");
+//return "I am Back ";
+callbackFn("I am Back ");
+},5000);
+//return undefined;
+}
+VM688:14  Start 
+VM688:16 End  undefined
+undefined
+VM688:20 I Will Run After 5 sec 
+VM688:2 I am Back 
+VM688:5 I am Back2
+VM688:7 I am Back3
+function cube(num, time){
+const promise = new Promise((resolve , reject)=>{
+// Async Code
+setTimeout(()=>{
+       resolve(num **3); 
+}, time);
+);    
+return promise;
+}
+VM926:7 Uncaught SyntaxError: Unexpected token ')'
+function cube(num, time){
+const promise = new Promise((resolve , reject)=>{
+// Async Code
+setTimeout(()=>{
+       resolve(num **3); 
+}, time);
+});    
+return promise;
+}
+undefined
+var p = cube(3,5000);
+console.log(p); // pending
+VM1037:2 Promise {<pending>}
+undefined
+p;
+Promise {<fulfilled>: 27}
+var p = cube(3,5000);
+console.log(p); // pending
+p.then(data=>console.log(data)).catch(err=>console.log(err));
+VM1251:2 Promise {<pending>}
+Promise {<pending>}
+VM1251:3 27
+function cube(num, time){
+const promise = new Promise((resolve , reject)=>{
+// Async Code
+setTimeout(()=>{
+        if(num>10){
+        reject('Rejected Number is Greater than 10');
+}
+       resolve(num **3); 
+}, time);
+});    
+return promise;
+}
+undefined
+var p = cube(5,5000);
+console.log(p); // pending
+p.then(data=>console.log(data)).catch(err=>console.log(err));
+VM1353:2 Promise {<pending>}
+Promise {<pending>}
+VM1353:3 125
+var p = cube(15,5000);
+console.log(p); // pending
+p.then(data=>console.log(data)).catch(err=>console.log(err));
+VM1367:2 Promise {<pending>}
+Promise {<pending>}
+VM1367:3 Rejected Number is Greater than 10
+var p = Promise.all([cube(3,1000), cube(2, 2000), cube(5, 5000)]);
+p.then(results =>console.log(results)).catch(err=>console.log('Error ',err));
+Promise {<pending>}
+VM1783:2 (3) [27, 8, 125]
+function cube(num, time){
+console.log('Call Start ', num, time);
+const promise = new Promise((resolve , reject)=>{
+// Async Code
+setTimeout(()=>{
+        if(num>10){
+        reject('Rejected Number is Greater than 10');
+}
+       resolve(num **3); 
+}, time);
+});    
+return promise;
+}
+undefined
+var p = Promise.all([cube(3,1000), cube(2, 2000), cube(5, 5000)]);
+p.then(results =>console.log(results)).catch(err=>console.log('Error ',err));
+VM1855:2 Call Start  3 1000
+VM1855:2 Call Start  2 2000
+VM1855:2 Call Start  5 5000
+Promise {<pending>}
+VM1859:2 (3) [27, 8, 125]
+var p = Promise.all([cube(3,1000), cube(12, 2000), cube(5, 5000)]);
+p.then(results =>console.log(results)).catch(err=>console.log('Error ',err));
+VM1855:2 Call Start  3 1000
+VM1855:2 Call Start  12 2000
+VM1855:2 Call Start  5 5000
+Promise {<pending>}
+VM1870:2 Error  Rejected Number is Greater than 10
+var p = Promise.allSettled([cube(3,1000), cube(12, 2000), cube(5, 5000)]);
+p.then(results =>console.log(results)).catch(err=>console.log('Error ',err));
+VM1855:2 Call Start  3 1000
+VM1855:2 Call Start  12 2000
+VM1855:2 Call Start  5 5000
+Promise {<pending>}
+VM1880:2 (3) [{…}, {…}, {…}]0: {status: "fulfilled", value: 27}1: {status: "rejected", reason: "Rejected Number is Greater than 10"}2: {status: "fulfilled", value: 125}length: 3__proto__: Array(0)
+var p = Promise.race([cube(3,1000), cube(12, 2000), cube(5, 5000)]);
+p.then(results =>console.log(results)).catch(err=>console.log('Error ',err));
+VM1855:2 Call Start  3 1000
+VM1855:2 Call Start  12 2000
+VM1855:2 Call Start  5 5000
+Promise {<pending>}
+VM1895:2 27
+function cube(num, time){
+console.log('Call Start ', num, time);
+const promise = new Promise((resolve , reject)=>{
+// Async Code
+setTimeout(()=>{
+        if(num>10000000){
+        reject('Rejected Number is Greater');
+}
+       resolve(num **3); 
+}, time);
+});    
+return promise;
+}
+undefined
+function totalCube(){
+var result = await cube(3);
+var sum = 0;
+console.log('Result is ',result);
+result = await cube(result);
+console.log('Result is ',result);
+
+}
+VM2178:2 Uncaught SyntaxError: await is only valid in async functions and the top level bodies of modules
+async function totalCube(){
+var sum = 0;
+try{
+var result = await cube(3);
+
+sum+=result;
+console.log('Result is ',result);
+sum+ = await cube(result);
+console.log('Result is ',result);
+console.log('Sum is ',sum);
+}
+catch(e){
+console.log(e);
+}
+return sum;
+}
+VM2324:8 Uncaught SyntaxError: Unexpected token '='
+async function totalCube(){
+var sum = 0;
+try{
+var result = await cube(3);
+
+sum +=result;
+console.log('Result is ',result);
+sum += await cube(result);
+console.log('Result is ',result);
+console.log('Sum is ',sum);
+}
+catch(e){
+console.log(e);
+}
+return sum;
+}
+undefined
+totalCube();
+VM1975:2 Call Start  3 undefined
+Promise {<pending>}
+VM2330:7 Result is  27
+VM1975:2 Call Start  27 undefined
+VM2330:9 Result is  27
+VM2330:10 Sum is  19710
+async function totalCube(){
+var sum = 0;
+try{
+var result = await cube(3,5000);
+
+sum +=result;
+console.log('Result is ',result);
+sum += await cube(result,7000);
+console.log('Result is ',result);
+console.log('Sum is ',sum);
+}
+catch(e){
+console.log(e);
+}
+return sum;
+}
+undefined
+totalCube();
+VM1975:2 Call Start  3 5000
+Promise {<pending>}
+VM2379:7 Result is  27
+VM1975:2 Call Start  27 7000
+VM2379:9 Result is  27
+VM2379:10 Sum is  19710
+totalCube().then(sum=>console.log(sum)).catch(e=>console.log(e));;
+VM1975:2 Call Start  3 5000
+Promise {<pending>}
+VM2379:7 Result is  27
+VM1975:2 Call Start  27 7000
+VM2379:9 Result is  27
+VM2379:10 Sum is  19710
+VM2502:1 19710
+totalCube().then(sum=>console.log(sum)).catch(e=>console.log(e)).finally(
+()=>console.log('Finally Called '));
+VM1975:2 Call Start  3 5000
+Promise {<pending>}
+VM2379:7 Result is  27
+VM1975:2 Call Start  27 7000
+VM2379:9 Result is  27
+VM2379:10 Sum is  19710
+VM2598:1 19710
+VM2598:2 Finally Called 
+XMLHttpRequest
+ƒ XMLHttpRequest() { [native code] }
+window.XMLHttpRequest
+ƒ XMLHttpRequest() { [native code] }
+var x = new XMLHttpRequest();
+undefined
