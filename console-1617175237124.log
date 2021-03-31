@@ -1,0 +1,486 @@
+var obj = {id:1001};
+undefined
+obj;
+{id: 1001}
+obj.id = 1002;
+1002
+obj;
+{id: 1002}
+obj.name = 'Ram';
+"Ram"
+obj;
+{id: 1002, name: "Ram"}
+obj.address = 'Delhi';
+"Delhi"
+obj;
+{id: 1002, name: "Ram", address: "Delhi"}address: "Delhi"id: 1002name: "Ram"__proto__: Object
+delete obj.address;
+true
+obj;
+{id: 1002, name: "Ram"}
+obj.age = 21;
+21
+obj;
+{id: 1002, name: "Ram", age: 21}
+for(let key in obj){
+    console.log(key);
+}
+VM430:2 id
+VM430:2 name
+VM430:2 age
+undefined
+for(let key in obj){
+    console.log(key, obj.key);
+}
+VM465:2 id undefined
+VM465:2 name undefined
+VM465:2 age undefined
+undefined
+for(let key in obj){
+    console.log(key, obj[key]);
+}
+VM487:2 id 1002
+VM487:2 name Ram
+VM487:2 age 21
+undefined
+obj;
+{id: 1002, name: "Ram", age: 21}
+obj.1=true;
+VM536:1 Uncaught SyntaxError: Unexpected number
+var obj2 = {1:true, 2: false, 3 : true};
+undefined
+obj2;
+{1: true, 2: false, 3: true}
+obj.1;
+VM636:1 Uncaught SyntaxError: Unexpected number
+obj[1];
+undefined
+obj2.1;
+VM688:1 Uncaught SyntaxError: Unexpected number
+obj2[1]
+true
+obj2[2];
+false
+var obj2 = {1:true, 2: false, 3 : true , 'a b':'ghdfjkghfdjkg'};
+undefined
+obj2.a b;
+VM821:1 Uncaught SyntaxError: Unexpected identifier
+obj2['a b'];
+"ghdfjkghfdjkg"
+var arr = [10,20,30,40,50];
+undefined
+for(let a of arr){
+    console.log(a);
+}
+VM970:2 10
+VM970:2 20
+VM970:2 30
+VM970:2 40
+VM970:2 50
+undefined
+arr.entries
+ƒ entries() { [native code] }
+arr.entries()
+Array Iterator {}
+arr.values()
+Array Iterator {}
+var itr = arr.values();
+undefined
+itr;
+Array Iterator {}__proto__: Array Iteratornext: ƒ next()arguments: (...)caller: (...)length: 0name: "next"__proto__: ƒ ()[[Scopes]]: Scopes[0]Symbol(Symbol.toStringTag): "Array Iterator"__proto__: Object
+itr.next()
+{value: 10, done: false}
+itr.next().value;
+20
+itr.next().value;
+30
+itr.next().value;
+40
+itr.next().value;
+50
+itr.next().value;
+undefined
+itr.next();
+{value: undefined, done: true}
+function *autoIncrement(){
+
+}
+undefined
+function *autoIncrement(){
+    var counter = 1;
+    yield counter;
+    counter+1;
+    yield counter;
+    counter+1;
+    yield counter;
+    counter+1;
+    yield counter;
+    
+}
+undefined
+var itr = autoIncrement();
+undefined
+itr;
+autoIncrement {<suspended>}
+itr.next();
+{value: 1, done: false}
+autoIncrement;
+ƒ *autoIncrement(){
+    var counter = 1;
+    yield counter;
+    counter+1;
+    yield counter;
+    counter+1;
+    yield counter;
+    counter+1;
+    yield counter;
+    
+}
+itr;
+autoIncrement {<suspended>}
+itr.next();
+{value: 1, done: false}
+function *autoIncrement(){
+    var counter = 1;
+    yield counter;
+    ++counter;
+    yield counter;
+    ++counter;
+    yield counter;
+    ++counter;
+    yield counter;
+    
+}
+undefined
+var itr = autoIncrement();
+undefined
+itr.next();
+{value: 1, done: false}
+itr.next();
+{value: 2, done: false}
+itr.next();
+{value: 3, done: false}
+itr.next();
+{value: 4, done: false}
+itr.next();
+{value: undefined, done: true}
+function *autoIncrement(){
+    var counter = 1;
+    while(true){
+    yield counter;
+    ++counter;
+}
+    
+}
+undefined
+var itr = autoIncrement();
+undefined
+itr.next().value;
+1
+itr.next().value;
+2
+itr.next().value;
+3
+itr.next().value;
+4
+itr.next().value;
+5
+itr.next().value;
+6
+itr.next().value;
+7
+itr.next().value;
+8
+itr.next().value;
+9
+itr.next().value;
+10
+itr.next().value;
+11
+itr.next().value;
+12
+itr.next().value;
+13
+obj;
+{id: 1002, name: "Ram", age: 21}
+console.dir(obj);
+VM2010:1 Objectage: 21id: 1002name: "Ram"__proto__: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+undefined
+Array;
+ƒ Array() { [native code] }
+typeof Array;
+"function"
+Array.prototype
+[constructor: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, find: ƒ, …]concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {copyWithin: true, entries: true, fill: true, find: true, findIndex: true, …}__proto__: Object
+var arr= [10,20];
+undefined
+var arr = new Array(10);
+undefined
+arr;
+(10) [empty × 10]
+var arr = new Array(10,20,30,40);
+undefined
+arr;
+(4) [10, 20, 30, 40]
+Object.prototype;
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+arr.entries
+ƒ entries() { [native code] }
+arr.entries();
+Array Iterator {}__proto__: Array Iteratornext: ƒ next()Symbol(Symbol.toStringTag): "Array Iterator"__proto__: Object
+var e = arr.entries();
+undefined
+typeof e;
+"object"
+e.next();
+{value: Array(2), done: false}done: falsevalue: (2) [0, 10]__proto__: Object
+e.next().value;
+(2) [1, 20]
+var t = arr.values();
+undefined
+t.next().value;
+10
+var obj ={id:1001, name:'ram', salary:9999};
+undefined
+typeof obj;
+"object"
+obj instanceof Object;
+true
+function createEmployee(id, name, salary){
+var obj = {};
+obj.id = id;
+obj.name = name;
+obj.salary = salary;
+return obj;
+}
+undefined
+var ram = createEmployee(1001, 'Ram', 9999);
+undefined
+ram;
+{id: 1001, name: "Ram", salary: 9999}
+var shyam = createEmployee(1002, 'Shyam', 5999);
+undefined
+shyam;
+{id: 1002, name: "Shyam", salary: 5999}
+ram == shyam;
+false
+ram.__proto__
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+shyam.__proto__
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+ram.__proto__ == Object.prototype;
+true
+ram.__proto__ == shyam.__proto__
+true
+function createCustomer(id, name, balance){
+var obj = {};
+obj.id = id;
+obj.name = name;
+obj.salary = balance;
+return obj;
+}
+undefined
+var amit = createCustomer(10, 'Amit',4444);
+undefined
+amit;
+{id: 10, name: "Amit", salary: 4444}
+amit.__proto__ == ram.__proto__
+true
+function createCustomer(id, name, balance){
+var obj = {};
+obj.id = id;
+obj.name = name;
+obj.balance = balance;
+return obj;
+}
+undefined
+var tim = createCustomer(20, 'Tim',43434);
+undefined
+tim;
+{id: 20, name: "Tim", balance: 43434}
+amit;
+{id: 10, name: "Amit", salary: 4444}
+amit.balance = amit.salary;
+4444
+amit;
+{id: 10, name: "Amit", salary: 4444, balance: 4444}
+delete amit.salary;
+true
+amit;
+{id: 10, name: "Amit", balance: 4444}
+function Employee(id, name, salary){
+  // this = {};
+this.id = id;
+this.name = name;
+this.salary = salary;
+// return this;
+}
+var sohan = new Employee(1001, 'Sohan',54545);
+undefined
+sohan;
+Employee {id: 1001, name: "Sohan", salary: 54545}id: 1001name: "Sohan"salary: 54545__proto__: Object
+ram;
+{id: 1001, name: "Ram", salary: 9999}
+typeof sohan;
+"object"
+sohan instanceof Employee;
+true
+sohan instanceof Object;
+true
+sohan.__proto__
+{constructor: ƒ}
+typeof Employee;
+"function"
+Employee.prototype
+{constructor: ƒ}constructor: ƒ Employee(id, name, salary)__proto__: Object
+sohan.__proto__ == Employee.prototype;
+true
+Employee;
+ƒ Employee(id, name, salary){
+  // this = {};
+this.id = id;
+this.name = name;
+this.salary = salary;
+// return this;
+}
+Employee.prototype.constructor
+ƒ Employee(id, name, salary){
+  // this = {};
+this.id = id;
+this.name = name;
+this.salary = salary;
+// return this;
+}
+Employee.prototype.constructor== Employee;
+true
+typeof Employee.prototype
+"object"
+Employee.prototype;
+{constructor: ƒ}
+Employee.prototype.companyName = 'India Mart';
+"India Mart"
+Employee.prototype
+{companyName: "India Mart", constructor: ƒ}
+sohan;
+Employee {id: 1001, name: "Sohan", salary: 54545}
+var mohan = new Employee(1002, 'Mohan',5345);
+undefined
+mohan;
+Employee {id: 1002, name: "Mohan", salary: 5345}
+mohan.__proto__
+{companyName: "India Mart", constructor: ƒ}
+mohan.__proto__.companyName;
+"India Mart"
+sohan.__proto__.companyName;
+"India Mart"
+mohan.__proto__== sohan.__proto__
+true
+mohan == sohan;
+false
+mohan.salary++; 
+5345
+mohan.salary;
+5346
+sohan;
+Employee {id: 1001, name: "Sohan", salary: 54545}
+Employee.prototype.print= function(){
+    console.log(`Id is ${this.id} Name is ${this.name} Salary is ${this.salary}`);
+}
+ƒ (){
+    console.log(`Id is ${this.id} Name is ${this.name} Salary is ${this.salary}`);
+}
+sohan.print();
+VM5457:2 Id is 1001 Name is Sohan Salary is 54545
+undefined
+sohan.__proto__ == Employee.prototype
+true
+sohan.__proto__.__proto__ == Object.prototype
+true
+Employee.prototype.__proto__ == Object.prototype
+true
+sohan.city;
+undefined
+sohan.city();
+VM5826:1 Uncaught TypeError: sohan.city is not a function
+    at <anonymous>:1:7
+(anonymous) @ VM5826:1
+Employee;
+ƒ Employee(id, name, salary){
+  // this = {};
+this.id = id;
+this.name = name;
+this.salary = salary;
+// return this;
+}
+console.dir(Employee);
+VM5898:1 ƒ Employee(id, name, salary)arguments: nullcaller: nulllength: 3name: "Employee"prototype: {companyName: "India Mart", print: ƒ, constructor: ƒ}companyName: "India Mart"print: ƒ ()constructor: ƒ Employee(id, name, salary)__proto__: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()__proto__: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()__proto__: constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()[[FunctionLocation]]: ​[[Scopes]]: Scopes[0][[FunctionLocation]]: VM4137:1[[Scopes]]: Scopes[1]
+undefined
+Employee.prototype.__proto__.constructor
+ƒ Object() { [native code] }
+Employee;
+ƒ Employee(id, name, salary){
+  // this = {};
+this.id = id;
+this.name = name;
+this.salary = salary;
+// return this;
+}
+Employee.length
+3
+Employee.name;
+"Employee"
+Employee.arguments
+null
+Employee.apply
+ƒ apply() { [native code] }
+sohan;
+Employee {id: 1001, name: "Sohan", salary: 54545}
+mohan;
+Employee {id: 1002, name: "Mohan", salary: 5346}
+sohan.toString();
+"[object Object]"
+Employee.prototype.toString = function(){
+return `Id is ${this.id} Name ${this.name} Salary ${this.salary}`;
+}
+ƒ (){
+return `Id is ${this.id} Name ${this.name} Salary ${this.salary}`;
+}
+sohan.toString();
+"Id is 1001 Name Sohan Salary 54545"
+console.log('Sohan ' + sohan);
+VM6581:1 Sohan Id is 1001 Name Sohan Salary 54545
+undefined
+Employee()
+undefined
+function Employee(id, name, salary){
+  // this = {};
+console.log('I am Employee ',this);
+this.id = id;
+this.name = name;
+this.salary = salary;
+// return this;
+}
+
+undefined
+var sohan = new Employee(1001, 'Sohan',43434);
+VM6767:3 I am Employee  Employee {}id: 1001name: "Sohan"salary: 43434__proto__: constructor: ƒ Employee(id, name, salary)__proto__: Object
+undefined
+Employee(1001, 'AA',4324); // window.Employee(1001, 'AA',4324)
+VM6767:3 I am Employee  Window {window: Window, self: Window, document: document, name: "undefined", location: Location, …}
+undefined
+function songOperation(){
+console.log('I am Song Operation ');
+}
+undefined
+function songOperation(){
+console.log('I am Song Operation ', this);
+}
+undefined
+songOperation();
+VM7100:2 I am Song Operation  Window {window: Window, self: Window, document: document, name: "AA", location: Location, …}
+undefined
+var w = new songOperation();
+VM7100:2 I am Song Operation  songOperation {}
+undefined
+var x = {};
+undefined
