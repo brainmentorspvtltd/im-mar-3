@@ -1,0 +1,54 @@
+function Employee(id, name){
+this.id = id;
+this.name = name;
+}
+
+
+undefined
+var ram = new Employee(1001, 'Ram');
+undefined
+ram.__proto__ == Employee.prototype;
+true
+Employee.prototype
+{constructor: ƒ}
+Object.getPrototypeOf(ram);
+{constructor: ƒ}constructor: ƒ Employee(id, name)__proto__: Object
+function show(){
+return 
+    {x:100}
+}
+undefined
+show()
+undefined
+function show(){
+return {x:100}
+}
+undefined
+show();
+{x: 100}
+var export = {id:1001, name:'Ram' Header: ()=>{
+    return ("<h1>I am a Header</h1>");
+}};
+VM618:1 Uncaught SyntaxError: Unexpected token 'export'
+var exports = {id:1001, name:'Ram' Header: ()=>{
+    return ("<h1>I am a Header</h1>");
+}};
+VM622:1 Uncaught SyntaxError: Unexpected identifier
+var exports = {id:1001, name:'Ram' Header: ()=>{
+    return ("<h1>I am a Header</h1>");
+}};
+VM635:1 Uncaught SyntaxError: Unexpected identifier
+var exports = {id:1001, name:'Ram', Header: ()=>{
+    return ("<h1>I am a Header</h1>");
+}};
+undefined
+exports;
+{id: 1001, name: "Ram", Header: ƒ}
+typeof exports;
+"object"
+var {Header} = exports;
+undefined
+Header;
+()=>{
+    return ("<h1>I am a Header</h1>");
+}
