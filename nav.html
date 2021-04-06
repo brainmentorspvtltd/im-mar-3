@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100%;
+        }
+        ul {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        #main-navigation > ul > li {
+            display: inline-block;
+            background-color: lightgray;
+            width: 14%;
+            text-align: center;
+            vertical-align: top;
+            background-color: red;
+            position: relative;
+        }
+        #main-navigation > ul > li > a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+        }
+        #main-navigation .dropdown {
+            position: absolute;
+            width: 100%;
+            background-color: red;
+            display: none;
+        }
+        #main-navigation .dropdown ul li a {
+            display: block;
+            padding: 10px 5px;
+        }
+        #main-navigation .dropdown ul li:hover {
+            background-color: lightpink;
+        }
+        #main-navigation .dropdown ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        #main-navigation ul li:hover .dropdown {
+            display: block;
+        }
+        #main-navigation .dropdown .sub-dropdown {
+            position: absolute;
+            width: 100%;
+            left: 100%;
+            background-color: red;
+            top: 0px;
+            border: 1px solid;
+            display: none;
+        }
+        #main-navigation .dropdown ul li:hover .sub-dropdown {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Navbar</h1>
+
+    <nav id="main-navigation">
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">Men</a>
+            </li>
+            <li>
+                <a href="#">Women</a>
+                <div class="dropdown">
+                    <ul>
+                        <li>
+                            <a href="#">Cricket</a>
+                        </li>
+                        <li>
+                            <a href="#">Football</a>
+                        </li>
+                        <li>
+                            <a href="#">Hockey</a>
+                        </li>
+                        <li>
+                            <a href="#">Chess</a>
+                        </li>
+                        <li>
+                            <a href="#">Ludo</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">Sports</a>
+                <div class="dropdown">
+                    <ul>
+                        <li>
+                            <a href="#">Cricket</a>
+                            <div class="sub-dropdown">
+                                <ul>
+                                    <li>
+                                        <a href="#">Bat</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Bowl</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Pads</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Kit</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Helmet</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">Football</a>
+                            <div class="sub-dropdown">
+                                <ul>
+                                    <li>
+                                        <a href="#">Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Gloves</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Nets</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Leg Guard</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">More</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">Hockey</a>
+                            <div class="sub-dropdown">
+                                <ul>
+                                    <li>
+                                        <a href="#">Bat</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Bowl</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Shoes</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Leg Guard</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Helmet</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">Chess</a>
+                            <div class="sub-dropdown">
+                                <ul>
+                                    <li>
+                                        <a href="#">Bat</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Bowl</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Pads</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Kit</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Helmet</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">Ludo</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">Electronics</a>
+                <div class="dropdown">
+                    <ul>
+                        <li>
+                            <a href="#">Cricket</a>
+                        </li>
+                        <li>
+                            <a href="#">Football</a>
+                        </li>
+                        <li>
+                            <a href="#">Hockey</a>
+                        </li>
+                        <li>
+                            <a href="#">Chess</a>
+                        </li>
+                        <li>
+                            <a href="#">Ludo</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">Books</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div>
+        <img src="https://www.cricbuzz.com/a/img/v1/420x235/i1/c204355/chennai-super-kings-a-second.jpg" alt="">
+    </div>
+    
+</body>
+</html>
