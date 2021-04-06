@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent_1, #parent_2 {
+            background-color: lightblue;
+        }
+        /* #parent_1 h2 {
+            color: red;
+        } */
+        /* #parent_1 .child h2 {
+            color: red;
+        } */
+
+        .parent {
+            border: 2px solid red;
+        }
+
+        #parent_2.parent {
+            border-color: blue;
+        }
+
+        /* Combinators */
+        #parent_1 > h2 {
+            color: red;
+        }
+        #parent_1 + h3 {
+            color: blue;
+        }
+        #parent_1 ~ h3 {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Basic Selectors</h1>
+
+    <div id="parent_1" class="parent">
+        <h2>This is heading inside parent_1</h2>
+        <div class="child">
+            <h2>This heading is inside child of parent_1</h2>
+            <h2>This heading is inside child of parent_1</h2>
+        </div>
+        <h2>This is heading inside parent_1</h2>
+    </div>
+
+    <hr>
+
+    <h3>This heading is outside parent_1</h3>
+    <h3>This heading is outside parent_1</h3>
+    <h3>This heading is outside parent_1</h3>
+
+    <hr>
+
+    <div id="parent_2" class="parent">
+        <h2>This is heading inside parent_2</h2>
+        <div class="child">
+            <h2>This heading is inside child of parent_2</h2>
+            <h2>This heading is inside child of parent_2</h2>
+        </div>
+        <h2>This is heading inside parent_2</h2>
+    </div>
+    
+</body>
+</html>
