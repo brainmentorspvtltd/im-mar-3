@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            /* animation-name: anim_1; */
+            /* animation-duration: 5s; */
+            /* animation-fill-mode: forwards; */
+            /* animation-iteration-count: infinite; */
+            /* animation-direction: alternate; */
+            /* animation-timing-function: linear; */
+            /* animation: anim_1 5s infinite linear alternate; */
+            animation: anim_1 5s infinite linear;
+        }
+        @keyframes anim_1 {
+            /* from {
+                transform: translate(0px,0px);
+            }
+            to {
+                transform: translate(500px, 300px);
+            } */
+
+            0% {
+                transform: translate(0px,0px);
+            }
+            50% {
+                transform: translate(800px,0px);
+                background-color: blue;
+            }
+            70% {
+                transform: translate(800px, 300px);
+                background-color: green;
+            }
+            75% {
+                transform: translate(0px,300px);
+                background-color: orange;
+            }
+            100% {
+                transform: translate(0px, 0px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Animations</h1>
+
+    <div></div>
+    
+</body>
+</html>

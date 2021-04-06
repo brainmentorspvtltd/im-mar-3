@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            border: 1px solid red;
+            overflow: hidden;
+            width: 300px;
+            height: 300px;
+            /* height: 500px; */
+            /* border-radius: 50%; */
+            margin: 0 auto;
+            /* perspective: 600px; */
+        }
+        .img {
+            height: inherit;
+            width: inherit;
+            background-image: url("https://static.toiimg.com/thumb/msid-81719546,width-1070,height-580,imgsize-1193560,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg");
+            background-position: center center;
+            background-size: cover;
+            transition-duration: 2s;
+        }
+        img {
+            /* width: 100%; */
+            /* height: inherit; */
+            transition-duration: 2s;
+            /* transform-origin: left; */
+        }
+        div:hover .img {
+            /* transform: translateX(300px); */
+            /* transform: translateY(300px); */
+            /* transform: translate(300px,300px); */
+            /* transform: rotateX(180deg); */
+            /* transform: rotateY(-180deg); */
+            /* transform: rotateZ(360deg); */
+            /* transform: translate(50%, 50%) rotateZ(360deg); */
+            transform: scale(2,2) translateY(50px);
+            /* transform: skewX(50deg); */
+            /* transform: skewY(50deg); */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Transformations</h1>
+
+    <div class="wrapper">
+        <!-- <img src="https://static.toiimg.com/thumb/msid-81719546,width-1070,height-580,imgsize-1193560,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg" alt=""> -->
+        <div class="img"></div>
+    </div>
+    
+</body>
+</html>
